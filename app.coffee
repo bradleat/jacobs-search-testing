@@ -1,6 +1,3 @@
-InkibraGraph = require('./node_modules/inkibra-graph/app.coffee').InkibraGraph
-
-#@graph = new InkibraGraph()
-
+#TODO: Add progress tracker
 Google = require('./engines/google').Google
 @google = new Google('google')
