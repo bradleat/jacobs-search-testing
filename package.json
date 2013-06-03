@@ -1,0 +1,23 @@
+{
+    "name": "jacobs-search-testing",
+    "description": "A Jacobs Research Tool",
+    "version": "0.0.1",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/bradleat/jacobs-search-testing.git"
+    },
+    "dependencies": {
+        "inkibra-graph": "0.0.x",
+        "coffee-script": "1.6.x",
+        "request": "2.21.x"
+
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "config": {
+        "namespace": "jst",
+        "port": 2999
+    }
+}
