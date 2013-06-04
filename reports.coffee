@@ -16,7 +16,10 @@ else
   @graph = new Graph()
   @graph.register('has')
   @graph.register('resulted')
-
+  _graph = @graph
   @graph.resulted.strongest "Session_#{argv.name}", 10, true, (err, res) ->
     for link in res
-      console.log link
+      _graph.Node.get link, (err, res) ->
+        body = JSON.parse res
+        console.log body.link
+        console.log body.about

@@ -13,7 +13,7 @@ exports.Google = class Google
       unless err
         data = JSON.parse body
         for result in data.items
-          parser.add_link result.link, result.title
+          parser.add_link result.link, result.title, result.snippet
 
     
     

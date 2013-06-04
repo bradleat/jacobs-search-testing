@@ -30,7 +30,7 @@ exports.Controller = class Parser
       if err
         throw err
 
-  add_link: (link, title) =>
+  add_link: (link, title, snippet) =>
     _graph = @graph
     _searchName = @searchSession_node.search_name
     @get link, (err, res, body) ->
@@ -38,6 +38,8 @@ exports.Controller = class Parser
         html: body
         tile: title
         link: link
+        about: snippet
+
       _store = JSON.stringify _store
 
       _graph.Node.insert link, _store, (err, res) ->
