@@ -38,6 +38,8 @@ exports.Controller = class Parser
         html: body
         tile: title
         link: link
+      _store = JSON.stringify _store
+
       _graph.Node.insert link, _store, (err, res) ->
         if err
           throw err
