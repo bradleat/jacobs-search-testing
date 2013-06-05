@@ -3,16 +3,20 @@
 #TODO: Data-View-Report Generation
 
 
-Graph = require('inkibra-graph').InkibraGraph
-#TODO: Console expose paths for:
-#1. Getting documents from a session put in a file w/o html
-#with information like (how many times was it linked to, during the session)
-#2. Getting documents from an engine definition put in a file w/o html
-#with ifnromation like how many times was it linked to by the engine
-@graph = new Graph()
-@graph.register('has')
-@graph.register('resulted')
+argv = require('commander')
+argv.version require('./package.json').version
+argv.option '-n, --name [type]', 'Name of the search you want to report'
+argv.parse process.argv
 
-@graph.resulted.strongest 'Session_testing', 10, false, (err, res) ->
-  for link in res
-    @graph.
+unless argv.name?
+  console.log "Error: A Session name must be defined.
+               \n'coffee search.coffee --help'    for Help ;)"
+else
+  Graph = require('inkibra-graph').InkibraGraph
+  @graph = new Graph()
+  @graph.register('has')
+  @graph.register('resulted')
+
+  @graph.resulted.strongest "Session_#{argv.name}", 10, true, (err, res) ->
+    for link in res
+      console.log link

@@ -1,7 +1,7 @@
 {
     "name": "jacobs-search-testing",
     "description": "A Jacobs Research Tool",
-    "version": "0.0.1",
+    "version": "0.0.8",
     "private": true,
     "repository": {
         "type": "git",
@@ -10,7 +10,8 @@
     "dependencies": {
         "inkibra-graph": "0.0.x",
         "coffee-script": "1.6.x",
-        "request": "2.21.x"
+        "request": "2.21.x",
+        "commander": "1.1.x"
 
     },
     "engines": {

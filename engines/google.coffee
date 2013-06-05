@@ -1,14 +1,14 @@
 exports.Google = class Google
-  constructor: (path) ->
+  constructor: (path, name) ->
     Controller = require('./controller').Controller
     engine = "Google"
     strip = require('../minify.json.js').Strip
     fs = require('fs')
     querystring = require('querystring')
     req = require('request')
-    config = JSON.parse(strip(fs.readFileSync("search/#{path}.json", 'utf8')))
+    config = JSON.parse(strip(fs.readFileSync(path, 'utf8')))
     base = "https://www.googleapis.com/customsearch/v1"
-    parser = new Controller(engine, config, 'testing')
+    parser = new Controller(engine, config, name)
     req "#{base}?#{querystring.stringify config.params}", (err, res, body) ->
       unless err
         data = JSON.parse body

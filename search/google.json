@@ -30,7 +30,7 @@
         "cr": "",                   //restrict results to a certain country:      Country Code
         "googlehost": "google.com"  //use a google domain[google.com, google.de, etc]
     },
-    "name": "Sample_Search"
+    "name": "Sample"
 
     
 }
