@@ -5,7 +5,7 @@ A Program designed to help Jacobs Researchers test the Academic Quality of Searc
 
 
 ##To Install:
-1. git clone https://github.com/bradleat/jacobs-search-testing
+1. git clone https://github.com/bradleat/jacobs-search-testing.git
 2. cd jacobs-search-testing
 3. ./prepare
 4. All Done: 
