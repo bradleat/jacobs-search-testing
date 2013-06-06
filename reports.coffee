@@ -17,9 +17,16 @@ else
   @graph.register('has')
   @graph.register('resulted')
   _graph = @graph
-  @graph.resulted.strongest "Session_#{argv.name}", 10, true, (err, res) ->
+  @graph.Node.get "Session_#{argv.name}", (err, config) ->
+    console.log "\n CONFIG FOR SEARCH:\n#{config}\n"
+  
+  @graph.resulted._unsafe_all "Session_#{argv.name}", true, (err, res) ->
     for link in res
-      _graph.Node.get link, (err, res) ->
-        body = JSON.parse res
-        console.log body.link
-        console.log body.about
+      console.log link
+      _graph.Node.get link, (err, res1) ->
+        body = JSON.parse res1
+        if body.link?
+          console.log "\n"
+          console.log body.link
+          console.log body.about
+          console.log "\n"
