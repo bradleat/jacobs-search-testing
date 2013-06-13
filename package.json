@@ -11,7 +11,10 @@
         "inkibra-graph": "0.0.x",
         "coffee-script": "1.6.x",
         "request": "2.21.x",
-        "commander": "1.1.x"
+        "commander": "1.1.x",
+        "zappajs": "0.4.x",
+        "cheerio": "0.12.x"
+
 
     },
     "engines": {

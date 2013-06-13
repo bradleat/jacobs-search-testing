@@ -18,7 +18,7 @@
         "cx": "015676719314893486612:arawq5-hdb4",
         "start": 1,                 //the first result to return [1 - (101- num)]
         "num": 10,                  //the number of results to return
-        "q": "sample",              //the query
+        "q": "karl marx",              //the query
         "hq": "",                   //things to Boolean AND Append to the Query
         "orTerms": "",              //things to Boolean OR Append to the Query
         "exactTerms": "",           //a phrase the documents returned must contain

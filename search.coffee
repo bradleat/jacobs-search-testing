@@ -13,6 +13,9 @@ argv.parse process.argv
 unless argv.engine? and argv.query? and argv.name?
   console.log "ERROR: An engine, query, and name must all be specified.
                \ncoffee 'search.coffee --help'   for Help ;)"
-else if argv.engine is 'google'
-  Google = require("./engines/google.coffee").Google
+else if argv.engine is 'google-api'
+  Google = require("./engines/google-api.coffee").Google
+  @google = new Google(argv.query, argv.name)
+else if argv.engine is 'google-scrape'
+  Google = require("./engines/google-scrape-base.coffee").Google
   @google = new Google(argv.query, argv.name)
