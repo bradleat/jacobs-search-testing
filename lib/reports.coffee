@@ -41,7 +41,7 @@ else
             console.log body.about
             console.log "\n"
      else
-       for link, i in res
+       for link, i in res when i < 4
         #_graph.Node.get link, (err, res1) ->
         await _graph.Node.get link, defer err, res1
         
