@@ -1,0 +1,8 @@
+mkdir node_modules
+cp lib/inkibra-graph.tar.gz node_modules/
+cd node_modules
+tar -zxvf inkibra-graph.tar.gz
+rm inkibra-graph.tar.gz
+cd ..
+sudo npm install
+

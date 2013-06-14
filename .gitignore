@@ -1,11 +1,10 @@
 # Log Files
 *.log
+dump.rdb
+notes.txt
 
 # Setup Directory
 # node_modules directory
-node_modules/request/
-node_modules/coffee-script/
-node_modules/.bin/
-node_modules/inkibra-graph
+node_modules/
 
  

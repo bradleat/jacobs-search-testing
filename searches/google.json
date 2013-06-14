@@ -1,0 +1,36 @@
+//This Engine Definition for Google is a Sample. Find out more about the params:
+//https://developers.google.com/custom-search/v1/using_rest#st_params
+//
+//For Information on Interface Lang.:
+//https://developers.google.com/custom-search/docs/xml_results#wsInterfaceLanguages
+//https://developers.google.com/custom-search/docs/xml_results#interfaceLanguages
+//
+//For Information on Lang. Codes
+//https://developers.google.com/custom-search/docs/xml_results?hl=en#languageCollections
+//
+//For Information on Country Codes:
+//https://developers.google.com/custom-search/docs/xml_results#countryCodes
+{
+    "params":
+    {
+
+        "key": "AIzaSyBoSX4f-hwzz8FxdSWfPhbXxVRaKPPRWfg",
+        "cx": "015676719314893486612:arawq5-hdb4",
+        "start": 1,                 //the first result to return [1 - (101- num)]
+        "num": 10,                  //the number of results to return
+        "q": "karl marx",              //the query
+        "hq": "",                   //things to Boolean AND Append to the Query
+        "orTerms": "",              //things to Boolean OR Append to the Query
+        "exactTerms": "",           //a phrase the documents returned must contain
+        "excludeTerms": "",         //a phrase the documents returned wont contain
+        "lr": "lang_en",            //the langauge of the results to be returned: Lang. Codes
+        "hl": "lang_en",            //the language that the 'user speaks':        Interface Lang.
+        "safe": "off",              //safe-search: [off, medium, high]
+        "gl": "us",                 //the location you want to report to google:  Country Code 
+        "cr": "",                   //restrict results to a certain country:      Country Code
+        "googlehost": "google.com"  //use a google domain[google.com, google.de, etc]
+    },
+    "name": "Sample"
+
+    
+}

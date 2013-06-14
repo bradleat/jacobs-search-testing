@@ -26,6 +26,9 @@ exports.Controller = class Parser
     @graph.Node.insert "Session_#{search_name}", JSON.stringify(@searchSession_node), (err, res) ->
       if err
         throw err
+    
+    @graph.track 'resulted', "Session_#{search_name}", 10000
+      
     @graph.has.link "#{engine}_#{config.name}", "Session_#{search_name}", (err, res) ->
       if err
         throw err
@@ -33,6 +36,8 @@ exports.Controller = class Parser
   add_link: (link, title, snippet) =>
     _graph = @graph
     _searchName = @searchSession_node.search_name
+    @graph.Node.insert link, ''
+    _graph.resulted.link "Session_#{_searchName}", link
     @get link, (err, res, body) ->
       _store =
         html: body
@@ -41,14 +46,11 @@ exports.Controller = class Parser
         about: snippet
 
       _store = JSON.stringify _store
+      JSON.parse _store
 
-      _graph.Node.insert link, _store, (err, res) ->
+      _graph.Node.set link, _store, (err, res) ->
         if err
           throw err
-        else
-          _graph.resulted.link "Session_#{_searchName}", link, (err, res) ->
-            if err
-              throw err
 
   
 

@@ -1,0 +1,19 @@
+if [ "$1" != "" ]; then
+    sNAME=$1
+else
+    echo -n "What is the name of the search you want to report "
+    read -e $NAME
+fi
+
+echo $sNAME
+mkdir logs/$sNAME
+echo creating short file
+iced lib/reports.coffee -n $sNAME >> logs/$sNAME/short.txt
+echo done with short file
+echo creating long html
+iced lib/reports.coffee -n $sNAME -v >> logs/$sNAME/long.html
+echo done with long html
+echo creating long file
+html2text logs/$sNAME/long.html >> logs/$sNAME/long.txt
+echo done with long file
+echo all done

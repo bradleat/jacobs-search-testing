@@ -2,7 +2,7 @@ exports.Google = class Google
   constructor: (path, name) ->
     Controller = require('./controller').Controller
     engine = "Google-Api"
-    strip = require('../minify.json.js').Strip
+    strip = require('../lib/minify.json.js').Strip
     fs = require('fs')
     querystring = require('querystring')
     req = require('request')
